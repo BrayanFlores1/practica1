@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title%} Index {% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Óptica Belmont</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header img {
+            width: 100px;
+        }
+
+        header h1 {
+            margin: 10px 0;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .social-buttons a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .social-buttons a:hover {
+            background-color: #555;
+        }
+
+        .testimonials, .advantages {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .testimonials h2, .advantages h2 {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="{{ url_for('static', filename='images/logo-optica.png') }}" alt="Logotipo de la Óptica" style="width: 500px; height: auto;">
+        <h1><b>Ópticas Belmont</b></h1>
+        <h5>Brayan alberto flores machaca</h5>
+    </header>
+
+    <div class="content">
+        <p>En Óptica Vista Clara, ofrecemos servicios especializados para el cuidado de tu visión, desde exámenes visuales hasta una amplia variedad de lentes y monturas.</p>
+
+        <div class="social-buttons">
+            <a href="https://www.facebook.com/opticasBelmot" target="_blank">Facebook</a>
+            <a href="https://www.youtube.com" target="_blank">YouTube</a>
+        </div>
+
+        <div class="testimonials">
+            <h2>Testimonios de Clientes</h2>
+            <p>"Excelente servicio y una gran variedad de lentes. Me ayudaron a encontrar la opción perfecta para mí." - María G.</p>
+            <p>"El equipo de Óptica Vista Clara es muy profesional y amable. Recomiendo sus servicios al 100%." - Carlos R.</p>
+        </div>
+
+        <div class="advantages">
+            <h2>Ventajas de Nuestros Servicios</h2>
+            <ul>
+                <li>Atención personalizada por profesionales en el cuidado visual.</li>
+                <li>Amplia selección de lentes de alta calidad y monturas a la moda.</li>
+                <li>Precios competitivos y facilidades de pago.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
+
+{% endblock %}

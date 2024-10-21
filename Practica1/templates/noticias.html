@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title%} Noticias {% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias de Salud en Bolivia</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Noticias de Salud en Bolivia</h1>
+
+        <!-- Noticia 1 -->
+        <div class="card mb-4">
+            <img src="{{ url_for('static', filename='images/noticia1.png') }}" class="card-img-top" alt="Noticia 1">
+            <div class="card-body">
+                <h5 class="card-title">GRAN CAMPAÑA DE ECOGRAFIA PARA MUJERES EMBARAZADAS</h5>
+                <p class="card-text"> Es la llamada ecografía estructural. Se miden el cuerpo y los órganos del bebé, así como la ubicación de la placenta y la cantidad de líquido amniótico. Puede permitir conocer el sexo del bebé.</p>
+                <a href="#" class="btn btn-primary">Leer más</a>
+            </div>
+        </div>
+
+        <!-- Noticia 2 -->
+        <div class="card mb-4">
+            <img src="{{ url_for('static', filename='images/noticia2.png') }}" class="card-img-top" alt="Noticia 2">
+            <div class="card-body">
+                <h5 class="card-title">AHORA LOS MEDICOS TENDRAN ACCESO GRATIS PARA REALIZAR LLAMADAS DE EMERGENCIA MEDIANTE SATELITES</h5>
+                <p class="card-text">En su publicación en X, la cual puedes ver a continuación, Elon Musk asegura que Starlink se ocupará de proporcionar servicios de emergencia para todas las personas que lo necesiten. Serán gratuitos y se podrán utilizar en los teléfonos móviles sin importar, como hemos indicado, el lugar en el que se encuentren o la operadora con la que tengan contratado su servicio.</p>
+                <a href="#" class="btn btn-primary">Leer más</a>
+            </div>
+        </div>
+
+        <!-- Noticia 3 -->
+        <div class="card mb-4">
+            <img src="{{ url_for('static', filename='images/noticia3.png') }}" class="card-img-top" alt="Noticia 3">
+            <div class="card-body">
+                <h5 class="card-title">FELICIDADES A TODOS LOS MEDICOS DE TODO EL TERRITORIO NACIONAL DE BOLIVIA</h5>
+                <p class="card-text">Cada 21 de septiembre se conmemora el Día del Médico Boliviano, por Decreto Supremo Nº 08209, mismo que obedece a costumbres ancestrales que en primara instancia se dedicaba a la limpieza de los males espirituales psico-biológicos, no sólo de familiares sino de toda la comunidad.</p>
+                <a href="#" class="btn btn-primary">Leer más</a>
+            </div>
+        </div>
+
+        <!-- Botón de contacto -->
+        <div class="text-center">
+            <a href="#contacto" class="btn btn-secondary">Contáctanos</a>
+        </div>
+
+        <!-- Sección de contacto -->
+        <div id="contacto" class="mt-5">
+            <h2>Contáctanos</h2>
+            <form action="/enviar" method="POST">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" class="form-control" name="apellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" class="form-control" name="correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea class="form-control" name="mensaje" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+{% endblock %}

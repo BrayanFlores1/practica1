@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title%} servicios {% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios de Óptica</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Nuestros Servicios</h1>
+
+        <!-- Servicio 1 -->
+        <div class="card mb-4">
+            <img src="{{ url_for('static', filename='images/servicio1.jpg') }}" class="card-img-top" alt="Servicio 1">
+            <div class="card-body">
+                <h5 class="card-title">Servicio 1: Exámenes de Visión</h5>
+                <p class="card-text">Realizamos exámenes de visión completos para determinar la salud ocular de nuestros pacientes.</p>
+                <a href="/servicio1" class="btn btn-primary">Leer más</a>
+            </div>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="card mb-4">
+            <img src="{{ url_for('static', filename='images/servicio2.jpg') }}" class="card-img-top" alt="Servicio 2">
+            <div class="card-body">
+                <h5 class="card-title">Servicio 2: Venta de Lentes</h5>
+                <p class="card-text">Ofrecemos una amplia variedad de lentes de prescripción y de sol de las mejores marcas.</p>
+                <a href="/servicio2" class="btn btn-primary">Leer más</a>
+            </div>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="card mb-4">
+            <img src="{{ url_for('static', filename='images/servicio3.jpg') }}" class="card-img-top" alt="Servicio 3">
+            <div class="card-body">
+                <h5 class="card-title">Servicio 3: Asesoramiento Personalizado</h5>
+                <p class="card-text">Brindamos asesoramiento personalizado para elegir las mejores opciones para tu salud visual.</p>
+                <a href="/servicio3" class="btn btn-primary">Leer más</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+{% endblock %}
