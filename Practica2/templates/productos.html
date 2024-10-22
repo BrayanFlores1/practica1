@@ -1,0 +1,58 @@
+{% extends './base.html' %}
+
+{% block title%} productos {% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRO DE PRODUCTOS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Color de fondo claro */
+        }
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>REGISTRO DE PRODUCTOS</h2>
+        <form action="/enviar_producto" method="POST"> <!-- Ruta a Flask -->
+            <div class="form-group">
+                <label for="producto">Producto:</label>
+                <input type="text" class="form-control" id="producto" name="producto" required>
+            </div>
+            <div class="form-group">
+                <label for="categoria">Categoría:</label>
+                <select class="form-control" id="categoria" name="categoria" required>
+                    <option value="">Seleccione una categoría</option>
+                    <option value="Electrónica">Electrónica</option>
+                    <option value="Ropa">Ropa</option>
+                    <option value="Alimentos">Alimentos</option>
+                    <option value="Hogar">Hogar</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="existencia">Existencia:</label>
+                <input type="number" class="form-control" id="existencia" name="existencia" required>
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio:</label>
+                <input type="number" step="0.01" class="form-control" id="precio" name="precio" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+{% endblock %}  

@@ -1,0 +1,64 @@
+{% extends './base.html' %}
+
+{% block title%} Index {% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSCRIPCION EN CURSO</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Color de fondo claro */
+        }
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>INSCRIPCION EN CURSO</h2>
+        <form action="/inscribir" method="POST"> <!-- Ruta a Flask -->
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+            </div>
+            <div class="form-group">
+                <label for="curso">Curso:</label>
+                <select class="form-control" id="curso" name="curso" required>
+                    <option value="">Seleccione un curso</option>
+                    <option value="Matemáticas">Matemáticas</option>
+                    <option value="Ciencias">Ciencias</option>
+                    <option value="Historia">Historia</option>
+                    <option value="Lengua">Lengua</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="paralelo">Paralelo:</label>
+                <select class="form-control" id="paralelo" name="paralelo" required>
+                    <option value="">Seleccione un paralelo</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+{% endblock %}
