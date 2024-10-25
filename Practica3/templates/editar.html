@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Inscrito</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Editar Inscrito</h1>
+        <form action="{{ url_for('editar_inscrito', id=inscrito.id) }}" method="POST">
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <input type="date" class="form-control" id="fecha" name="fecha" value="{{ inscrito.fecha }}" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" value="{{ inscrito.nombre }}" required>
+            </div>
+            <div class="form-group">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" class="form-control" id="apellidos" name="apellidos" value="{{ inscrito.apellidos }}" required>
+            </div>
+            <div class="form-group">
+                <label for="turno">Turno:</label>
+                <select class="form-control" id="turno" name="turno" required>
+                    <option {% if inscrito.turno == 'Mañana' %} selected {% endif %}>Mañana</option>
+                    <option {% if inscrito.turno == 'Tarde' %} selected {% endif %}>Tarde</option>
+                    <option {% if inscrito.turno == 'Noche' %} selected {% endif %}>Noche</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="seminarios">Seminarios:</label>
+                <input type="text" class="form-control" id="seminarios" name="seminarios" value="{{ inscrito.seminarios }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        </form>
+    </div>
+</body>
+</html>
